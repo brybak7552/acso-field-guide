@@ -312,5 +312,11 @@ document.addEventListener('change', function(e){
 
 updateProgress();
 </script>
+  window.addEventListener('DOMContentLoaded', function(){
+  ['vehicle','physical','statements'].forEach(function(id){
+    const el = document.getElementById(id);
+    if(el) el.classList.add('hidden');
+  });
+});
 </body>
 </html>
