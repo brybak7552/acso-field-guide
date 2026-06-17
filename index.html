@@ -47,7 +47,7 @@ textarea{min-height:85px}
 <body>
 <header>
   <h1>ACSO FIELD GUIDE</h1>
-  <div class="subtitle">Ohio OVI Investigation Reference Demo</div>
+  <div class="subtitle">Reference Demo</div>
 </header>
 
 <div class="container">
@@ -299,7 +299,43 @@ textarea{min-height:85px}
     </div>
   </div>
 
-  <div class="card locked"><h3>Post-Arrest Checklist</h3><p>Coming Soon</p></div>
+  <div class="card">
+    <div class="accordion-title" onclick="toggleAccordion('postArrest')"><h3>Post-Arrest Checklist</h3><span>▼</span></div>
+    <div id="postArrest" class="accordion-content">
+
+      <div class="card">
+        <h3>Reports</h3>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Official Report Completed</span></label>
+        <div class="summary-list">
+          <label class="checkrow"><input type="checkbox" class="track"><span>Primary Narrative Completed</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Supporting Narratives Completed</span></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Attachments / Records</h3>
+        <label class="checkrow"><input type="checkbox" class="track"><span>CCH Attached</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Driving History Attached</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Vehicle LEADS Printout Attached</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>BMV 2255 / ALS Paperwork Attached</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Chemical Test / Refusal Paperwork Attached</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Tow / Inventory Paperwork Attached, if applicable</span></label>
+      </div>
+
+      <div class="card">
+        <h3>Evidence / Notifications</h3>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Body / Cruiser Camera Uploaded</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>DB Made Aware of Any Drug Offenses</span></label>
+      </div>
+
+      <div class="card">
+        <h3>Court Filing</h3>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Charges Filed with Municipal Court</span></label>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
 <div id="hgn" class="page">
@@ -393,7 +429,7 @@ textarea{min-height:85px}
 
 </div>
 
-<div class="footer">ACSO FIELD GUIDE • Demo Version 7</div>
+<div class="footer">ACSO FIELD GUIDE • Demo Version 8</div>
 
 <script>
 function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateProgress();}
