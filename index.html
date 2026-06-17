@@ -211,7 +211,7 @@ textarea{
   <div class="grid">
     <div class="card">
       <h3>Ohio OVI Investigation</h3>
-      <p>Reference guide for investigation observations, SFST review, arrest processing, charging considerations, and post-arrest follow-up.</p>
+      <p>Reference guide for investigation observations, SFST review, alternative tests, arrest processing, charging considerations, and post-arrest follow-up.</p>
       <button onclick="showPage('ovi')">Open Module</button>
     </div>
 
@@ -322,6 +322,30 @@ textarea{
           <p id="batteryNote" class="small">Combined SFST battery reference appears when clues are selected from all three tests.</p>
         </div>
 
+        <div class="card">
+          <div class="accordion-title" onclick="toggleAccordion('alternativeTests')">
+            <h3>Alternative Tests</h3><span>▼</span>
+          </div>
+
+          <div id="alternativeTests" class="accordion-content">
+            <p class="small">Supplemental impairment assessment tools. These are not clue-scored in this demo.</p>
+
+            <div class="card">
+              <h3>Lack of Convergence</h3>
+              <p class="small">Used to observe whether both eyes are able to converge when a stimulus is moved toward the bridge of the nose.</p>
+              <button class="btn-blue" onclick="showPage('loc')">Open Lack of Convergence Reference</button>
+            </div>
+
+            <div class="card">
+              <h3>Alternative Test Battery</h3>
+              <p class="small">Alphabet, Finger Count, Rhomberg, Hand Clap, Nose Touch, and PBT / Final Indicators.</p>
+              <button class="btn-blue" onclick="showPage('altbattery')">Open Alternative Test Battery Reference</button>
+            </div>
+
+            <a class="docbtn" href="additional-tests.html" target="_blank">Open Full Additional Tests Form</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -423,9 +447,119 @@ textarea{
   </div>
 </div>
 
+<div id="loc" class="page">
+  <button class="btn-dark" onclick="showPage('ovi')">← Back to OVI Investigation</button>
+
+  <div class="card">
+    <h2>Lack of Convergence Reference</h2>
+    <p class="muted">Supplemental impairment assessment tool. Not scored as SFST clues in this demo.</p>
+
+    <h3>Quick Reference</h3>
+    <ul>
+      <li>Ask whether the subject is wearing glasses or contacts.</li>
+      <li>Advise the subject that you are going to check their eyes.</li>
+      <li>Have the subject stand with feet together and arms at their side.</li>
+      <li>Instruct the subject to keep their head still and follow the stimulus with both eyes.</li>
+      <li>Move the stimulus slowly toward the bridge of the nose.</li>
+      <li>Observe whether both eyes converge.</li>
+      <li>Repeat as needed to confirm observations.</li>
+    </ul>
+
+    <h3>Observation Focus</h3>
+    <ul>
+      <li>Eyes converge.</li>
+      <li>Lack of convergence observed.</li>
+      <li>Rebound / eyes drift outward.</li>
+      <li>Unable to follow stimulus.</li>
+    </ul>
+
+    <textarea class="resettable" placeholder="Lack of Convergence notes"></textarea>
+    <a class="docbtn" href="additional-tests.html" target="_blank">Open Full Additional Tests Form</a>
+  </div>
 </div>
 
-<div class="footer">ACSO FIELD GUIDE • Demo Version 4</div>
+<div id="altbattery" class="page">
+  <button class="btn-dark" onclick="showPage('ovi')">← Back to OVI Investigation</button>
+
+  <div class="card">
+    <h2>Alternative Test Battery Reference</h2>
+    <p class="muted">Supplemental tests used as additional impairment indicators. These are not clue-scored in this demo.</p>
+
+    <div class="card">
+      <h3>Use Criteria</h3>
+      <ul>
+        <li>50 pounds overweight.</li>
+        <li>Over 65 years of age.</li>
+        <li>Injury claimed.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Alphabet</h3>
+      <ul>
+        <li>Explain alphabet test instructions.</li>
+        <li>Observe whether subject completes the test.</li>
+        <li>Note errors, omissions, or improper sequence.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Finger Count</h3>
+      <ul>
+        <li>Explain finger count instructions.</li>
+        <li>Subject attempts 1, 2, 3, 4 sequence touching each finger to thumb.</li>
+        <li>Subject attempts 4, 3, 2, 1 sequence touching each finger to thumb.</li>
+        <li>Observe improper count, missed finger-to-thumb contact, or other errors.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Rhomberg</h3>
+      <ul>
+        <li>Explain Rhomberg instructions.</li>
+        <li>Subject closes eyes and tilts head back.</li>
+        <li>Hands remain at side.</li>
+        <li>Stop after approximately 30 seconds.</li>
+        <li>Observe swaying, balance issues, or incorrect time estimate.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Hand Clap</h3>
+      <ul>
+        <li>Explain hand clap instructions.</li>
+        <li>Subject counts to 10.</li>
+        <li>Front and back of palm count as one number.</li>
+        <li>Observe improper count or improper hand movement.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Nose Touch</h3>
+      <ul>
+        <li>Explain nose touch instructions.</li>
+        <li>Subject closes eyes.</li>
+        <li>Right / left command given.</li>
+        <li>Observe missed nose touch, wrong finger, wrong hand, or other error.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>PBT / Final Indicators</h3>
+      <ul>
+        <li>Document PBT result or refusal if applicable.</li>
+        <li>Document whether impairment indicators appear consistent with alcohol, drugs, or both.</li>
+      </ul>
+    </div>
+
+    <textarea class="resettable" placeholder="Alternative test notes"></textarea>
+    <a class="docbtn" href="additional-tests.html" target="_blank">Open Full Additional Tests Form</a>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">ACSO FIELD GUIDE • Demo Version 5</div>
 
 <script>
 function showPage(id){
