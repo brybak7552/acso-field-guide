@@ -1,318 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ACSO FIELD GUIDE</title>
-
 <style>
 :root{
---black:#0d0d0d;
---gold:#d4af37;
---blue:#102a43;
---card:#161616;
---text:#f5f5f5;
---muted:#b0b0b0;
+  --black:#080808;
+  --card:#151515;
+  --card2:#1d1d1d;
+  --gold:#d4af37;
+  --blue:#102a43;
+  --blue2:#163d63;
+  --text:#f5f5f5;
+  --muted:#b8b8b8;
+  --border:#333;
 }
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-}
-
+*{box-sizing:border-box}
 body{
-background:var(--black);
-color:var(--text);
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:var(--black);
+  color:var(--text);
 }
-
 header{
-background:linear-gradient(135deg,var(--blue),#07121f);
-padding:24px;
-border-bottom:3px solid var(--gold);
+  padding:24px 18px;
+  background:linear-gradient(135deg,#07121f,var(--blue));
+  border-bottom:3px solid var(--gold);
 }
-
-h1{
-color:var(--gold);
-font-size:30px;
-}
-
-.subtitle{
-margin-top:8px;
-color:#ddd;
-}
-
-.container{
-padding:20px;
-max-width:1100px;
-margin:auto;
-}
-
+h1{margin:0;color:var(--gold);letter-spacing:1px}
+.subtitle{margin-top:8px;color:#ddd}
+.container{max-width:1050px;margin:auto;padding:18px}
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:16px;
-margin-top:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
+  gap:14px;
 }
-
 .card{
-background:var(--card);
-padding:20px;
-border-radius:12px;
-border-left:5px solid var(--gold);
+  background:var(--card);
+  border:1px solid var(--border);
+  border-left:5px solid var(--gold);
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:14px;
 }
-
-.card h3{
-color:var(--gold);
-margin-bottom:10px;
-}
-
-.card p{
-color:var(--muted);
-line-height:1.5;
-}
-
+.card h2,.card h3{color:var(--gold);margin-top:0}
+.card p,.muted{color:var(--muted);line-height:1.5}
 button{
-margin-top:12px;
-background:var(--gold);
-border:none;
-padding:10px 15px;
-font-weight:bold;
-border-radius:8px;
-cursor:pointer;
+  background:var(--gold);
+  color:#000;
+  border:0;
+  border-radius:10px;
+  padding:10px 14px;
+  font-weight:700;
+  cursor:pointer;
+  margin:4px 4px 4px 0;
 }
-
-section{
-margin-top:40px;
+.btn-blue{background:var(--blue2);color:white}
+.btn-dark{background:#2a2a2a;color:white;border:1px solid #555}
+.locked{opacity:.45}
+.page{display:none}
+.page.active{display:block}
+.checkrow{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:9px 0;
+  border-bottom:1px solid #252525;
 }
-
-ul{
-padding-left:20px;
-line-height:1.8;
+.checkrow input[type="checkbox"]{
+  transform:scale(1.25);
+  margin-top:3px;
 }
-
-.locked{
-opacity:.45;
+input[type="text"],textarea{
+  width:100%;
+  background:#0f0f0f;
+  color:white;
+  border:1px solid #444;
+  border-radius:10px;
+  padding:10px;
+  margin-top:8px;
 }
-
+textarea{min-height:85px}
+.small{font-size:.9rem;color:var(--muted)}
+.progress{
+  background:var(--card2);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+  margin:14px 0;
+}
+.accordion-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+}
+.hidden{display:none}
 .footer{
-text-align:center;
-padding:30px;
-color:#888;
-}
-
-.module{
-display:none;
-}
-
-.module.active{
-display:block;
-}
-
-.nav{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-top:20px;
-}
-
-.nav button{
-background:var(--blue);
-color:white;
+  color:#888;
+  text-align:center;
+  padding:28px;
 }
 </style>
 </head>
 
 <body>
-
 <header>
-<h1>ACSO FIELD GUIDE</h1>
-<p class="subtitle">
-Ashland County Sheriff's Office Reference Platform
-</p>
+  <h1>ACSO FIELD GUIDE</h1>
+  <div class="subtitle">Ohio OVI Investigation Reference Demo</div>
 </header>
 
 <div class="container">
 
-<div class="grid">
+  <div id="home" class="page active">
+    <div class="grid">
+      <div class="card">
+        <h3>Ohio OVI Investigation</h3>
+        <p>Reference guide for investigation observations, SFST review, arrest processing, charging considerations, and post-arrest follow-up.</p>
+        <button onclick="showPage('ovi')">Open Module</button>
+      </div>
+      <div class="card locked"><h3>Domestic Violence</h3><p>Coming Soon</p></div>
+      <div class="card locked"><h3>Mental Health Crisis</h3><p>Coming Soon</p></div>
+      <div class="card locked"><h3>Juvenile Complaints</h3><p>Coming Soon</p></div>
+      <div class="card locked"><h3>Search Warrants</h3><p>Coming Soon</p></div>
+      <div class="card locked"><h3>Evidence Processing</h3><p>Coming Soon</p></div>
+    </div>
+  </div>
 
-<div class="card">
-<h3>Ohio OVI Investigation</h3>
-<p>
-Reference guide for investigation planning,
-arrest processing, charging considerations,
-and post-arrest procedures.
-</p>
-<button onclick="showModule('ovi')">
-Open Module
-</button>
+  <div id="ovi" class="page">
+    <button class="btn-dark" onclick="showPage('home')">← Home</button>
+
+    <div class="card">
+      <h2>Ohio OVI Investigation</h2>
+      <p class="muted">Reference and preparation tool. Verify final procedure with current law, agency policy, prosecutor guidance, and approved forms.</p>
+    </div>
+
+    <div class="progress">
+      <strong>Investigation Progress</strong>
+      <p id="progressText" class="small">0 checklist items selected.</p>
+      <button class="btn-dark" onclick="resetChecklist()">Reset Investigation Checklist</button>
+    </div>
+
+    <div class="card">
+      <h3>Investigation Observations</h3>
+
+      <div class="card">
+        <div class="accordion-title" onclick="toggle('vehicle')">
+          <h3>Driving Behavior — Vehicle in Motion</h3><span>▼</span>
+        </div>
+        <div id="vehicle">
+          <p class="small">Not exhaustive.</p>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Speed</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Marked Lanes</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Traffic Control Devices</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Distance Judgment / Following Too Closely</span></label>
+          <label>Other:<input type="text" class="resettable" placeholder="Type other driving behavior"></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="accordion-title" onclick="toggle('physical')">
+          <h3>Physical Indicators — At the Window</h3><span>▼</span>
+        </div>
+        <div id="physical">
+          <p class="small">Not exhaustive.</p>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Red face</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Bloodshot, watery, and / or glassy eyes</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Pupils not appropriate for light conditions</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Slurred speech</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Unable to multitask / fumbling for items</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Issues with balancing</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Odor of alcohol / marijuana on person</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Evidence of alcohol / drug consumption in vehicle</span></label>
+          <label>Other:<input type="text" class="resettable" placeholder="Type other physical indicator"></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="accordion-title" onclick="toggle('statements')">
+          <h3>Statements</h3><span>▼</span>
+        </div>
+        <div id="statements">
+          <label>Witnesses?<textarea class="resettable" placeholder="Witness observations / statements"></textarea></label>
+          <label>What does the driver tell you?<textarea class="resettable" placeholder="Driver statements"></textarea></label>
+          <label>Where are they coming from?<input type="text" class="resettable"></label>
+          <label>Where are they going to?<input type="text" class="resettable"></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>SFST's</h3>
+
+        <div class="card">
+          <label class="checkrow"><input type="checkbox" class="track"><span>HGN administered</span></label>
+          <p class="small">Standalone 82% accuracy for 4 out of 6 clues / 91% when combined with Walk and Turn and One Leg Stand. For BAC above 0.08%.</p>
+          <button class="btn-blue" onclick="showPage('hgn')">Open HGN Reference</button>
+        </div>
+
+        <div class="card">
+          <label class="checkrow"><input type="checkbox" class="track"><span>Walk and Turn administered</span></label>
+          <p class="small">Standalone 68% accuracy for 2 out of 8 clues / 91% when combined with HGN and One Leg Stand. For BAC above 0.08%.</p>
+          <button class="btn-blue" onclick="showPage('wat')">Open Walk and Turn Reference</button>
+        </div>
+
+        <div class="card">
+          <label class="checkrow"><input type="checkbox" class="track"><span>One Leg Stand administered</span></label>
+          <p class="small">Standalone 65% accuracy for 2 out of 4 clues / 91% when combined with HGN and Walk and Turn. For BAC 0.08%.</p>
+          <button class="btn-blue" onclick="showPage('ols')">Open One Leg Stand Reference</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card locked"><h3>Probable Cause Assessment</h3><p>Coming Soon</p></div>
+    <div class="card locked"><h3>Arrest & Processing</h3><p>Coming Soon</p></div>
+    <div class="card locked"><h3>Chemical Testing</h3><p>Coming Soon</p></div>
+    <div class="card locked"><h3>Charging Considerations</h3><p>Coming Soon</p></div>
+    <div class="card locked"><h3>Post-Arrest Checklist</h3><p>Coming Soon</p></div>
+  </div>
+
+  <div id="hgn" class="page">
+    <button class="btn-dark" onclick="showPage('ovi')">← Back to OVI Investigation</button>
+    <div class="card">
+      <h2>HGN Test Reference</h2>
+      <label class="checkrow"><input type="checkbox" class="track"><span>HGN test administered</span></label>
+      <p><strong>Accuracy Reference:</strong> 82% standalone accuracy for 4 out of 6 clues / 91% combined with Walk and Turn and One Leg Stand.</p>
+      <h3>Reference Notes</h3>
+      <ul>
+        <li>Horizontal Gaze Nystagmus is used as part of the SFST battery.</li>
+        <li>Document whether the test was administered and any observed clues.</li>
+        <li>Use current agency-approved SFST procedure and training materials.</li>
+      </ul>
+      <textarea class="resettable" placeholder="HGN notes"></textarea>
+      <button class="btn-blue">Open Full HGN Test Document — Link Placeholder</button>
+    </div>
+  </div>
+
+  <div id="wat" class="page">
+    <button class="btn-dark" onclick="showPage('ovi')">← Back to OVI Investigation</button>
+    <div class="card">
+      <h2>Walk and Turn Test Reference</h2>
+      <label class="checkrow"><input type="checkbox" class="track"><span>Walk and Turn test administered</span></label>
+      <p><strong>Accuracy Reference:</strong> 68% standalone accuracy for 2 out of 8 clues / 91% combined with HGN and One Leg Stand.</p>
+      <h3>Reference Notes</h3>
+      <ul>
+        <li>Walk and Turn is a divided-attention SFST.</li>
+        <li>Document instructions, performance, and observed clues.</li>
+        <li>Use current agency-approved SFST procedure and training materials.</li>
+      </ul>
+      <textarea class="resettable" placeholder="Walk and Turn notes"></textarea>
+      <button class="btn-blue">Open Full Walk and Turn Test Document — Link Placeholder</button>
+    </div>
+  </div>
+
+  <div id="ols" class="page">
+    <button class="btn-dark" onclick="showPage('ovi')">← Back to OVI Investigation</button>
+    <div class="card">
+      <h2>One Leg Stand Test Reference</h2>
+      <label class="checkrow"><input type="checkbox" class="track"><span>One Leg Stand test administered</span></label>
+      <p><strong>Accuracy Reference:</strong> 65% standalone accuracy for 2 out of 4 clues / 91% combined with HGN and Walk and Turn.</p>
+      <h3>Reference Notes</h3>
+      <ul>
+        <li>One Leg Stand is a divided-attention SFST.</li>
+        <li>Document instructions, performance, and observed clues.</li>
+        <li>Use current agency-approved SFST procedure and training materials.</li>
+      </ul>
+      <textarea class="resettable" placeholder="One Leg Stand notes"></textarea>
+      <button class="btn-blue">Open Full One Leg Stand Test Document — Link Placeholder</button>
+    </div>
+  </div>
+
 </div>
 
-<div class="card locked">
-<h3>Domestic Violence</h3>
-<p>Coming Soon</p>
-</div>
-
-<div class="card locked">
-<h3>Mental Health Crisis</h3>
-<p>Coming Soon</p>
-</div>
-
-<div class="card locked">
-<h3>Juvenile Complaints</h3>
-<p>Coming Soon</p>
-</div>
-
-<div class="card locked">
-<h3>Search Warrants</h3>
-<p>Coming Soon</p>
-</div>
-
-<div class="card locked">
-<h3>Evidence Processing</h3>
-<p>Coming Soon</p>
-</div>
-
-</div>
-
-<div id="ovi" class="module">
-
-<section>
-
-<h2 style="color:#d4af37;">
-Ohio OVI Reference Guide
-</h2>
-
-<div class="nav">
-<button onclick="jump('prep')">Prepare</button>
-<button onclick="jump('investigation')">Investigate</button>
-<button onclick="jump('arrest')">Arrest</button>
-<button onclick="jump('charges')">Charges</button>
-<button onclick="jump('post')">Post-Arrest</button>
-</div>
-
-</section>
-
-<section id="prep">
-<div class="card">
-<h3>Pre-Investigation Planning</h3>
-
-<ul>
-<li>Review OVI indicators</li>
-<li>Review SFST requirements</li>
-<li>Review agency OVI policy</li>
-<li>Consider crash-related factors</li>
-<li>Consider drug impairment indicators</li>
-<li>Review BMV 2255 procedures</li>
-</ul>
-
-</div>
-</section>
-
-<section id="investigation">
-<div class="card">
-<h3>Investigation Considerations</h3>
-
-<ul>
-<li>Driving behavior</li>
-<li>Physical indicators</li>
-<li>Statements</li>
-<li>Field Sobriety Tests</li>
-<li>Portable Breath Test (if authorized)</li>
-<li>Drug impairment observations</li>
-<li>Body camera documentation</li>
-</ul>
-
-</div>
-</section>
-
-<section id="arrest">
-<div class="card">
-<h3>Arrest & Processing</h3>
-
-<ul>
-<li>Establish probable cause</li>
-<li>Read BMV 2255 as required</li>
-<li>Determine test type</li>
-<li>Document refusals</li>
-<li>Inventory vehicle if applicable</li>
-<li>Tow documentation</li>
-<li>ALS documentation</li>
-</ul>
-
-</div>
-</section>
-
-<section id="charges">
-<div class="card">
-<h3>Charging Review</h3>
-
-<ul>
-<li>OVI Alcohol</li>
-<li>OVI Drugs</li>
-<li>OVI Combined Influence</li>
-<li>Open Container</li>
-<li>DUS / FRA</li>
-<li>Warrants</li>
-<li>Drug Possession</li>
-<li>Weapons Violations</li>
-<li>Failure to Comply</li>
-<li>Crash Related Offenses</li>
-</ul>
-
-</div>
-</section>
-
-<section id="post">
-<div class="card">
-<h3>Post-Arrest Checklist</h3>
-
-<ul>
-<li>Incident Report</li>
-<li>OVI Narrative</li>
-<li>Evidence Upload</li>
-<li>Body Camera Review</li>
-<li>Chemical Test Records</li>
-<li>Tow Sheet</li>
-<li>ALS Documentation</li>
-<li>Court Packet</li>
-<li>Prosecutor Materials</li>
-</ul>
-
-</div>
-</section>
-
-</div>
-
-</div>
-
-<div class="footer">
-ACSO FIELD GUIDE • Demo Version 1
-</div>
+<div class="footer">ACSO FIELD GUIDE • Demo Version 2</div>
 
 <script>
-
-function showModule(id){
-document.querySelectorAll('.module')
-.forEach(x=>x.classList.remove('active'));
-
-document.getElementById(id)
-.classList.add('active');
-
-window.scrollTo({
-top:document.getElementById(id).offsetTop-20,
-behavior:'smooth'
-});
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  updateProgress();
 }
 
-function jump(id){
-document.getElementById(id).scrollIntoView({
-behavior:'smooth'
-});
+function toggle(id){
+  const el=document.getElementById(id);
+  el.classList.toggle('hidden');
 }
 
+function updateProgress(){
+  const checked=document.querySelectorAll('input.track:checked').length;
+  document.getElementById('progressText').innerText =
+    checked + ' checklist item' + (checked===1?'':'s') + ' selected.';
+}
+
+function resetChecklist(){
+  document.querySelectorAll('input.track').forEach(x=>x.checked=false);
+  document.querySelectorAll('.resettable').forEach(x=>x.value='');
+  updateProgress();
+}
+
+document.addEventListener('change', function(e){
+  if(e.target.classList.contains('track')) updateProgress();
+});
+
+updateProgress();
 </script>
-
 </body>
 </html>
