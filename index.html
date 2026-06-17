@@ -7,208 +7,44 @@
 
 <style>
 :root{
-  --black:#080808;
-  --card:#151515;
-  --card2:#1d1d1d;
-  --gold:#d4af37;
-  --blue:#102a43;
-  --blue2:#163d63;
-  --text:#f5f5f5;
-  --muted:#b8b8b8;
-  --border:#333;
+  --black:#080808;--card:#151515;--card2:#1d1d1d;--gold:#d4af37;
+  --blue:#102a43;--blue2:#163d63;--text:#f5f5f5;--muted:#b8b8b8;--border:#333;
 }
-
 *{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  background:var(--black);
-  color:var(--text);
-}
-
-header{
-  padding:24px 18px;
-  background:linear-gradient(135deg,#07121f,var(--blue));
-  border-bottom:3px solid var(--gold);
-}
-
-h1{
-  margin:0;
-  color:var(--gold);
-  letter-spacing:1px;
-}
-
-.subtitle{
-  margin-top:8px;
-  color:#ddd;
-}
-
-.container{
-  max-width:1050px;
-  margin:auto;
-  padding:18px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
-  gap:14px;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-left:5px solid var(--gold);
-  border-radius:14px;
-  padding:18px;
-  margin-bottom:14px;
-}
-
-.card h2,.card h3{
-  color:var(--gold);
-  margin-top:0;
-}
-
-.card p,.muted{
-  color:var(--muted);
-  line-height:1.5;
-}
-
-button,.docbtn{
-  background:var(--gold);
-  color:#000;
-  border:0;
-  border-radius:10px;
-  padding:10px 14px;
-  font-weight:700;
-  cursor:pointer;
-  margin:4px 4px 4px 0;
-  text-decoration:none;
-  display:inline-block;
-}
-
-.btn-blue,.docbtn{
-  background:var(--blue2);
-  color:white;
-}
-
-.btn-dark{
-  background:#2a2a2a;
-  color:white;
-  border:1px solid #555;
-}
-
-.locked{
-  opacity:.45;
-}
-
-.page{
-  display:none;
-}
-
-.page.active{
-  display:block;
-}
-
-.checkrow{
-  display:flex;
-  gap:10px;
-  align-items:flex-start;
-  padding:9px 0;
-  border-bottom:1px solid #252525;
-}
-
-.checkrow input[type="checkbox"]{
-  transform:scale(1.25);
-  margin-top:3px;
-}
-
-input[type="text"],textarea{
-  width:100%;
-  background:#0f0f0f;
-  color:white;
-  border:1px solid #444;
-  border-radius:10px;
-  padding:10px;
-  margin-top:8px;
-}
-
-textarea{
-  min-height:85px;
-}
-
-.small{
-  font-size:.9rem;
-  color:var(--muted);
-}
-
-.progress{
-  background:var(--card2);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:12px;
-  margin:14px 0;
-}
-
-.accordion-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  cursor:pointer;
-}
-
-.accordion-title h3{
-  margin:0;
-}
-
-.accordion-content{
-  display:none;
-  margin-top:14px;
-}
-
-.accordion-content.open{
-  display:block;
-}
-
-.summarybox{
-  background:#101820;
-  border:1px solid #2d4d69;
-  border-left:5px solid var(--gold);
-  border-radius:12px;
-  padding:14px;
-  margin-top:14px;
-}
-
-.badge{
-  display:inline-block;
-  background:#222;
-  border:1px solid #555;
-  border-radius:999px;
-  padding:6px 10px;
-  margin:4px;
-  color:#eee;
-}
-
-.summary-list{
-  background:#0f0f0f;
-  border:1px solid #333;
-  border-radius:10px;
-  padding:12px;
-  color:#ddd;
-  line-height:1.7;
-}
-
-.footer{
-  color:#888;
-  text-align:center;
-  padding:28px;
-}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--black);color:var(--text)}
+header{padding:24px 18px;background:linear-gradient(135deg,#07121f,var(--blue));border-bottom:3px solid var(--gold)}
+h1{margin:0;color:var(--gold);letter-spacing:1px}
+.subtitle{margin-top:8px;color:#ddd}
+.container{max-width:1050px;margin:auto;padding:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--border);border-left:5px solid var(--gold);border-radius:14px;padding:18px;margin-bottom:14px}
+.card h2,.card h3{color:var(--gold);margin-top:0}
+.card p,.muted{color:var(--muted);line-height:1.5}
+button,.docbtn{background:var(--gold);color:#000;border:0;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer;margin:4px 4px 4px 0;text-decoration:none;display:inline-block}
+.btn-blue,.docbtn{background:var(--blue2);color:white}
+.btn-dark{background:#2a2a2a;color:white;border:1px solid #555}
+.locked{opacity:.45}
+.page{display:none}.page.active{display:block}
+.checkrow{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid #252525}
+.checkrow input[type="checkbox"]{transform:scale(1.25);margin-top:3px}
+input[type="text"],textarea{width:100%;background:#0f0f0f;color:white;border:1px solid #444;border-radius:10px;padding:10px;margin-top:8px}
+textarea{min-height:85px}
+.small{font-size:.9rem;color:var(--muted)}
+.progress{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:12px;margin:14px 0}
+.accordion-title{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.accordion-title h3{margin:0}
+.accordion-content{display:none;margin-top:14px}
+.accordion-content.open{display:block}
+.summarybox{background:#101820;border:1px solid #2d4d69;border-left:5px solid var(--gold);border-radius:12px;padding:14px;margin-top:14px}
+.badge{display:inline-block;background:#222;border:1px solid #555;border-radius:999px;padding:6px 10px;margin:4px;color:#eee}
+.summary-list{background:#0f0f0f;border:1px solid #333;border-radius:10px;padding:12px;color:#ddd;line-height:1.7}
+.alert{background:#2a2108;border:1px solid var(--gold);border-left:5px solid var(--gold);border-radius:12px;padding:14px;margin:12px 0;color:#fff}
+.orc-link{display:block;color:#fff;background:#102a43;border:1px solid #2d4d69;border-radius:10px;padding:10px;margin:8px 0;text-decoration:none}
+.footer{color:#888;text-align:center;padding:28px}
 </style>
 </head>
 
 <body>
-
 <header>
   <h1>ACSO FIELD GUIDE</h1>
   <div class="subtitle">Ohio OVI Investigation Reference Demo</div>
@@ -220,10 +56,9 @@ textarea{
   <div class="grid">
     <div class="card">
       <h3>Ohio OVI Investigation</h3>
-      <p>Reference guide for investigation observations, SFST review, alternative tests, probable cause assessment, arrest processing, charging considerations, and post-arrest follow-up.</p>
+      <p>Reference guide for investigation observations, SFST review, alternative tests, probable cause assessment, arrest processing, charging, and post-arrest follow-up.</p>
       <button onclick="showPage('ovi')">Open Module</button>
     </div>
-
     <div class="card locked"><h3>Domestic Violence</h3><p>Coming Soon</p></div>
     <div class="card locked"><h3>Mental Health Crisis</h3><p>Coming Soon</p></div>
     <div class="card locked"><h3>Juvenile Complaints</h3><p>Coming Soon</p></div>
@@ -250,9 +85,7 @@ textarea{
     <h3>Investigation Observations</h3>
 
     <div class="card">
-      <div class="accordion-title" onclick="toggleAccordion('vehicle')">
-        <h3>Driving Behavior — Vehicle in Motion</h3><span>▼</span>
-      </div>
+      <div class="accordion-title" onclick="toggleAccordion('vehicle')"><h3>Driving Behavior — Vehicle in Motion</h3><span>▼</span></div>
       <div id="vehicle" class="accordion-content">
         <p class="small">Not exhaustive.</p>
         <label class="checkrow"><input type="checkbox" class="track pc-driving" data-label="Speed"><span>Speed</span></label>
@@ -264,9 +97,7 @@ textarea{
     </div>
 
     <div class="card">
-      <div class="accordion-title" onclick="toggleAccordion('physical')">
-        <h3>Physical Indicators — At the Window</h3><span>▼</span>
-      </div>
+      <div class="accordion-title" onclick="toggleAccordion('physical')"><h3>Physical Indicators — At the Window</h3><span>▼</span></div>
       <div id="physical" class="accordion-content">
         <p class="small">Not exhaustive.</p>
         <label class="checkrow"><input type="checkbox" class="track pc-physical" data-label="Red face"><span>Red face</span></label>
@@ -282,9 +113,7 @@ textarea{
     </div>
 
     <div class="card">
-      <div class="accordion-title" onclick="toggleAccordion('statements')">
-        <h3>Statements</h3><span>▼</span>
-      </div>
+      <div class="accordion-title" onclick="toggleAccordion('statements')"><h3>Statements</h3><span>▼</span></div>
       <div id="statements" class="accordion-content">
         <label>Witnesses?<textarea id="witnessStatements" class="resettable" placeholder="Witness observations / statements"></textarea></label>
         <label>What does the driver tell you?<textarea id="driverStatements" class="resettable" placeholder="Driver statements"></textarea></label>
@@ -294,10 +123,7 @@ textarea{
     </div>
 
     <div class="card">
-      <div class="accordion-title" onclick="toggleAccordion('sfst')">
-        <h3>SFST's</h3><span>▼</span>
-      </div>
-
+      <div class="accordion-title" onclick="toggleAccordion('sfst')"><h3>SFST's</h3><span>▼</span></div>
       <div id="sfst" class="accordion-content">
 
         <div class="card">
@@ -323,36 +149,26 @@ textarea{
 
         <div class="summarybox">
           <h3 style="color:var(--gold);margin-top:0;">Impairment Indicator Summary</h3>
-          <div id="sfstSummary">
-            <span class="badge">HGN: 0 / 6 clues</span>
-            <span class="badge">Walk and Turn: 0 / 8 clues</span>
-            <span class="badge">One Leg Stand: 0 / 4 clues</span>
-          </div>
-          <p id="batteryNote" class="small">Combined SFST battery reference appears when clues are selected from all three tests.</p>
+          <div id="sfstSummary"></div>
+          <p id="batteryNote" class="small"></p>
         </div>
 
         <div class="card">
-          <div class="accordion-title" onclick="toggleAccordion('alternativeTests')">
-            <h3>Alternative Tests</h3><span>▼</span>
-          </div>
-
+          <div class="accordion-title" onclick="toggleAccordion('alternativeTests')"><h3>Alternative Tests</h3><span>▼</span></div>
           <div id="alternativeTests" class="accordion-content">
             <p class="small">Supplemental impairment assessment tools. These are not clue-scored in this demo.</p>
-
             <div class="card">
               <h3>Lack of Convergence</h3>
-              <p class="small">Used to observe whether both eyes are able to converge when a stimulus is moved toward the bridge of the nose.</p>
+              <p class="small">Observe whether both eyes converge when a stimulus is moved toward the bridge of the nose.</p>
               <label class="checkrow"><input type="checkbox" class="track alt-test" data-label="Lack of Convergence reviewed / considered"><span>Lack of Convergence reviewed / considered</span></label>
               <button class="btn-blue" onclick="showPage('loc')">Open Lack of Convergence Reference</button>
             </div>
-
             <div class="card">
               <h3>Alternative Test Battery</h3>
               <p class="small">Alphabet, Finger Count, Rhomberg, Hand Clap, Nose Touch, and PBT / Final Indicators.</p>
               <label class="checkrow"><input type="checkbox" class="track alt-test" data-label="Alternative Test Battery reviewed / considered"><span>Alternative Test Battery reviewed / considered</span></label>
               <button class="btn-blue" onclick="showPage('altbattery')">Open Alternative Test Battery Reference</button>
             </div>
-
             <a class="docbtn" href="additional-tests.html" target="_blank">Open Full Additional Tests Form</a>
           </div>
         </div>
@@ -362,46 +178,21 @@ textarea{
   </div>
 
   <div class="card">
-    <div class="accordion-title" onclick="toggleAccordion('probableCause')">
-      <h3>Probable Cause Assessment Lite</h3><span>▼</span>
-    </div>
-
+    <div class="accordion-title" onclick="toggleAccordion('probableCause')"><h3>Probable Cause Assessment Lite</h3><span>▼</span></div>
     <div id="probableCause" class="accordion-content">
-      <p class="small">
-        This section helps organize observations. It does not determine probable cause.
-        The officer must independently evaluate the totality of circumstances.
-      </p>
-
-      <div class="card">
-        <h3>Driving Indicators Documented</h3>
-        <div id="pcDrivingSummary" class="summary-list">No driving indicators selected.</div>
-      </div>
-
-      <div class="card">
-        <h3>Personal Contact Indicators Documented</h3>
-        <div id="pcPhysicalSummary" class="summary-list">No physical indicators selected.</div>
-      </div>
-
-      <div class="card">
-        <h3>Statements Summary</h3>
-        <div id="pcStatementsSummary" class="summary-list">No statement information entered.</div>
-      </div>
-
-      <div class="card">
-        <h3>SFST Summary</h3>
-        <div id="pcSfstSummary" class="summary-list">No SFST clues selected.</div>
-      </div>
-
-      <div class="card">
-        <h3>Alternative Test Summary</h3>
-        <div id="pcAltSummary" class="summary-list">No alternative tests selected.</div>
-      </div>
+      <p class="small">This section helps organize observations. It does not determine probable cause. The officer must independently evaluate the totality of circumstances.</p>
+      <div class="card"><h3>Driving Indicators Documented</h3><div id="pcDrivingSummary" class="summary-list"></div></div>
+      <div class="card"><h3>Personal Contact Indicators Documented</h3><div id="pcPhysicalSummary" class="summary-list"></div></div>
+      <div class="card"><h3>Statements Summary</h3><div id="pcStatementsSummary" class="summary-list"></div></div>
+      <div class="card"><h3>SFST Summary</h3><div id="pcSfstSummary" class="summary-list"></div></div>
+      <div class="card"><h3>Alternative Test Summary</h3><div id="pcAltSummary" class="summary-list"></div></div>
 
       <div class="card">
         <h3>Enforcement Decision / Next Step</h3>
         <label class="checkrow"><input type="checkbox" class="track"><span>Warning</span></label>
         <label class="checkrow"><input type="checkbox" class="track"><span>Citation</span></label>
         <label class="checkrow"><input type="checkbox" class="track"><span>OVI Arrest</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Physical Control</span></label>
         <label class="checkrow"><input type="checkbox" class="track"><span>Drug Investigation</span></label>
         <label class="checkrow"><input type="checkbox" class="track"><span>Request DRE</span></label>
         <label>Other:<input type="text" class="resettable" placeholder="Other enforcement decision / next step"></label>
@@ -420,37 +211,110 @@ textarea{
     </div>
   </div>
 
-  <div class="card locked"><h3>Arrest & Processing</h3><p>Coming Soon</p></div>
-  <div class="card locked"><h3>Chemical Testing</h3><p>Coming Soon</p></div>
-  <div class="card locked"><h3>Charging Considerations</h3><p>Coming Soon</p></div>
+  <div class="card">
+    <div class="accordion-title" onclick="toggleAccordion('arrestProcessing')"><h3>Arrest & Processing</h3><span>▼</span></div>
+    <div id="arrestProcessing" class="accordion-content">
+
+      <div class="card">
+        <h3>Arrest</h3>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Miranda Read</span></label>
+      </div>
+
+      <div class="card">
+        <h3>Vehicle Disposition</h3>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Released to responsible party</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Towed</span></label>
+        <div class="summary-list">
+          <label class="checkrow"><input type="checkbox" class="track"><span>Impound</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Tow yard</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Searched — Probable Cause</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Searched — Consent</span></label>
+          <label class="checkrow"><input type="checkbox" class="track"><span>Inventoried</span></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Ohio BMV 2255</h3>
+        <div class="alert"><strong>Timing Reminder:</strong> BMV 2255 should be read within 2 hours after stop / accident / encounter.</div>
+        <label class="checkrow"><input type="checkbox" class="track"><span>BMV 2255 Read</span></label>
+        <a class="docbtn" href="2255-form.html" target="_blank">Open BMV 2255 Form</a>
+      </div>
+
+      <div class="card">
+        <h3>Chemical Testing</h3>
+        <div class="alert"><strong>Timing Reminder:</strong> Chemical testing should be performed within 3 hours after stop / accident / encounter.</div>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Breath test</span></label>
+        <label>BAC %:<input type="text" class="resettable" placeholder="Example: 0.123"></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Urine</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Blood — warrant required</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Refusal</span></label>
+      </div>
+
+      <div class="card">
+        <h3>BMV Administrative Suspension</h3>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Administrative suspension completed</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>DL seized</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Vehicle seized</span></label>
+      </div>
+
+      <div class="card">
+        <h3>Suspect Disposition</h3>
+        <label class="checkrow"><input type="checkbox" class="track"><span>8 hour hold</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Released to responsible party</span></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion-title" onclick="toggleAccordion('charging')"><h3>Charging Considerations</h3><span>▼</span></div>
+    <div id="charging" class="accordion-content">
+      <label class="checkrow"><input type="checkbox" class="track"><span>Citation issued</span></label>
+
+      <div class="alert"><strong>COURT DATE WARNING:</strong><br>ANY OVI / PHYSICAL CONTROL MUST HAVE A COURT DATE WITHIN 5 BUSINESS DAYS.</div>
+
+      <div class="card">
+        <h3>Charging Reminders</h3>
+        <ul>
+          <li>For OVI, include moving violation in addition to OVI charge when supported by facts.</li>
+          <li>Consider additional related charges: Open Container, Wrongful Entrustment, Consumption.</li>
+          <li>Possible felony charges? Send to municipal court and notate that felony charges are being considered.</li>
+          <li>Complete Riverside if needed.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Common OVI-Related ORC References</h3>
+        <a class="orc-link" href="https://codes.ohio.gov/ohio-revised-code/section-4511.19" target="_blank">ORC 4511.19 — OVI</a>
+        <a class="orc-link" href="https://codes.ohio.gov/ohio-revised-code/section-4511.194" target="_blank">ORC 4511.194 — Physical Control</a>
+        <a class="orc-link" href="https://codes.ohio.gov/ohio-revised-code/section-4511.191" target="_blank">ORC 4511.191 — Implied Consent</a>
+        <a class="orc-link" href="https://codes.ohio.gov/ohio-revised-code/section-4511.192" target="_blank">ORC 4511.192 — Advice to OVI Arrestee</a>
+        <a class="orc-link" href="https://codes.ohio.gov/ohio-revised-code/section-4301.62" target="_blank">ORC 4301.62 — Open Container</a>
+        <a class="orc-link" href="https://codes.ohio.gov/ohio-revised-code/section-4511.202" target="_blank">ORC 4511.202 — Operation Without Reasonable Control</a>
+        <a class="orc-link" href="https://codes.ohio.gov/ohio-revised-code/section-4511.33" target="_blank">ORC 4511.33 — Marked Lanes</a>
+        <a class="orc-link" href="https://codes.ohio.gov/ohio-revised-code/section-4511.21" target="_blank">ORC 4511.21 — Speed</a>
+        <a class="orc-link" href="https://codes.ohio.gov/ohio-revised-code/section-4511.39" target="_blank">ORC 4511.39 — Turn Signal</a>
+        <a class="orc-link" href="https://codes.ohio.gov/ohio-revised-code/section-4511.41" target="_blank">ORC 4511.41 — Right of Way</a>
+        <p class="small">Verify current statute language and applicable local charging practice before filing.</p>
+      </div>
+    </div>
+  </div>
+
   <div class="card locked"><h3>Post-Arrest Checklist</h3><p>Coming Soon</p></div>
 </div>
 
 <div id="hgn" class="page">
   <button class="btn-dark" onclick="showPage('ovi')">← Back to OVI Investigation</button>
-
   <div class="card">
     <h2>HGN Test Reference</h2>
     <label class="checkrow"><input type="checkbox" class="track"><span>HGN test administered</span></label>
     <p><strong>Accuracy Reference:</strong> 82% standalone accuracy for 4 out of 6 clues / 91% combined with Walk and Turn and One Leg Stand.</p>
-
-    <h3>HGN Clues Checklist</h3>
-    <p class="small" id="hgnCount">0 / 6 clues selected.</p>
-
+    <h3>HGN Clues Checklist</h3><p class="small" id="hgnCount"></p>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue hgn-clue"><span>Lack of smooth pursuit — left eye</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue hgn-clue"><span>Lack of smooth pursuit — right eye</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue hgn-clue"><span>Distinct and sustained nystagmus at maximum deviation — left eye</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue hgn-clue"><span>Distinct and sustained nystagmus at maximum deviation — right eye</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue hgn-clue"><span>Onset of nystagmus prior to 45 degrees — left eye</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue hgn-clue"><span>Onset of nystagmus prior to 45 degrees — right eye</span></label>
-
-    <h3>Reference Notes</h3>
-    <ul>
-      <li>Horizontal Gaze Nystagmus is used as part of the SFST battery.</li>
-      <li>Document whether the test was administered and any observed clues.</li>
-      <li>Use current agency-approved SFST procedure and training materials.</li>
-    </ul>
-
     <textarea class="resettable" placeholder="HGN notes"></textarea>
     <a class="docbtn" href="hgn-test.html" target="_blank">Open Full HGN Test Document</a>
   </div>
@@ -458,15 +322,11 @@ textarea{
 
 <div id="wat" class="page">
   <button class="btn-dark" onclick="showPage('ovi')">← Back to OVI Investigation</button>
-
   <div class="card">
     <h2>Walk and Turn Test Reference</h2>
     <label class="checkrow"><input type="checkbox" class="track"><span>Walk and Turn test administered</span></label>
     <p><strong>Accuracy Reference:</strong> 68% standalone accuracy for 2 out of 8 clues / 91% combined with HGN and One Leg Stand.</p>
-
-    <h3>Walk and Turn Clues Checklist</h3>
-    <p class="small" id="watCount">0 / 8 clues selected.</p>
-
+    <h3>Walk and Turn Clues Checklist</h3><p class="small" id="watCount"></p>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue wat-clue"><span>Cannot keep balance during instructions</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue wat-clue"><span>Starts too soon</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue wat-clue"><span>Stops while walking</span></label>
@@ -475,14 +335,6 @@ textarea{
     <label class="checkrow"><input type="checkbox" class="track sfst-clue wat-clue"><span>Uses arms for balance</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue wat-clue"><span>Improper turn</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue wat-clue"><span>Incorrect number of steps</span></label>
-
-    <h3>Reference Notes</h3>
-    <ul>
-      <li>Walk and Turn is a divided-attention SFST.</li>
-      <li>Document instructions, performance, and observed clues.</li>
-      <li>Use current agency-approved SFST procedure and training materials.</li>
-    </ul>
-
     <textarea class="resettable" placeholder="Walk and Turn notes"></textarea>
     <a class="docbtn" href="walk-and-turn-test.html" target="_blank">Open Full Walk and Turn Test Document</a>
   </div>
@@ -490,27 +342,15 @@ textarea{
 
 <div id="ols" class="page">
   <button class="btn-dark" onclick="showPage('ovi')">← Back to OVI Investigation</button>
-
   <div class="card">
     <h2>One Leg Stand Test Reference</h2>
     <label class="checkrow"><input type="checkbox" class="track"><span>One Leg Stand test administered</span></label>
     <p><strong>Accuracy Reference:</strong> 65% standalone accuracy for 2 out of 4 clues / 91% combined with HGN and Walk and Turn.</p>
-
-    <h3>One Leg Stand Clues Checklist</h3>
-    <p class="small" id="olsCount">0 / 4 clues selected.</p>
-
+    <h3>One Leg Stand Clues Checklist</h3><p class="small" id="olsCount"></p>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue ols-clue"><span>Sways while balancing</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue ols-clue"><span>Uses arms for balance</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue ols-clue"><span>Hopping</span></label>
     <label class="checkrow"><input type="checkbox" class="track sfst-clue ols-clue"><span>Puts foot down</span></label>
-
-    <h3>Reference Notes</h3>
-    <ul>
-      <li>One Leg Stand is a divided-attention SFST.</li>
-      <li>Document instructions, performance, and observed clues.</li>
-      <li>Use current agency-approved SFST procedure and training materials.</li>
-    </ul>
-
     <textarea class="resettable" placeholder="One Leg Stand notes"></textarea>
     <a class="docbtn" href="one-leg-stand-test.html" target="_blank">Open Full One Leg Stand Test Document</a>
   </div>
@@ -518,11 +358,9 @@ textarea{
 
 <div id="loc" class="page">
   <button class="btn-dark" onclick="showPage('ovi')">← Back to OVI Investigation</button>
-
   <div class="card">
     <h2>Lack of Convergence Reference</h2>
     <p class="muted">Supplemental impairment assessment tool. Not scored as SFST clues in this demo.</p>
-
     <h3>Quick Reference</h3>
     <ul>
       <li>Ask whether the subject is wearing glasses or contacts.</li>
@@ -531,17 +369,7 @@ textarea{
       <li>Instruct the subject to keep their head still and follow the stimulus with both eyes.</li>
       <li>Move the stimulus slowly toward the bridge of the nose.</li>
       <li>Observe whether both eyes converge.</li>
-      <li>Repeat as needed to confirm observations.</li>
     </ul>
-
-    <h3>Observation Focus</h3>
-    <ul>
-      <li>Eyes converge.</li>
-      <li>Lack of convergence observed.</li>
-      <li>Rebound / eyes drift outward.</li>
-      <li>Unable to follow stimulus.</li>
-    </ul>
-
     <textarea class="resettable" placeholder="Lack of Convergence notes"></textarea>
     <a class="docbtn" href="additional-tests.html" target="_blank">Open Full Additional Tests Form</a>
   </div>
@@ -549,78 +377,15 @@ textarea{
 
 <div id="altbattery" class="page">
   <button class="btn-dark" onclick="showPage('ovi')">← Back to OVI Investigation</button>
-
   <div class="card">
     <h2>Alternative Test Battery Reference</h2>
     <p class="muted">Supplemental tests used as additional impairment indicators. These are not clue-scored in this demo.</p>
-
-    <div class="card">
-      <h3>Use Criteria</h3>
-      <ul>
-        <li>50 pounds overweight.</li>
-        <li>Over 65 years of age.</li>
-        <li>Injury claimed.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Alphabet</h3>
-      <ul>
-        <li>Explain alphabet test instructions.</li>
-        <li>Observe whether subject completes the test.</li>
-        <li>Note errors, omissions, or improper sequence.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Finger Count</h3>
-      <ul>
-        <li>Explain finger count instructions.</li>
-        <li>Subject attempts 1, 2, 3, 4 sequence touching each finger to thumb.</li>
-        <li>Subject attempts 4, 3, 2, 1 sequence touching each finger to thumb.</li>
-        <li>Observe improper count, missed finger-to-thumb contact, or other errors.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Rhomberg</h3>
-      <ul>
-        <li>Explain Rhomberg instructions.</li>
-        <li>Subject closes eyes and tilts head back.</li>
-        <li>Hands remain at side.</li>
-        <li>Stop after approximately 30 seconds.</li>
-        <li>Observe swaying, balance issues, or incorrect time estimate.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Hand Clap</h3>
-      <ul>
-        <li>Explain hand clap instructions.</li>
-        <li>Subject counts to 10.</li>
-        <li>Front and back of palm count as one number.</li>
-        <li>Observe improper count or improper hand movement.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Nose Touch</h3>
-      <ul>
-        <li>Explain nose touch instructions.</li>
-        <li>Subject closes eyes.</li>
-        <li>Right / left command given.</li>
-        <li>Observe missed nose touch, wrong finger, wrong hand, or other error.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>PBT / Final Indicators</h3>
-      <ul>
-        <li>Document PBT result or refusal if applicable.</li>
-        <li>Document whether impairment indicators appear consistent with alcohol, drugs, or both.</li>
-      </ul>
-    </div>
-
+    <div class="card"><h3>Use Criteria</h3><ul><li>50 pounds overweight.</li><li>Over 65 years of age.</li><li>Injury claimed.</li></ul></div>
+    <div class="card"><h3>Alphabet</h3><ul><li>Explain instructions.</li><li>Observe completion.</li><li>Note errors, omissions, or improper sequence.</li></ul></div>
+    <div class="card"><h3>Finger Count</h3><ul><li>1, 2, 3, 4 sequence.</li><li>4, 3, 2, 1 sequence.</li><li>Observe missed contact or improper count.</li></ul></div>
+    <div class="card"><h3>Rhomberg</h3><ul><li>Eyes closed, head back.</li><li>Hands at side.</li><li>Stop after approximately 30 seconds.</li><li>Observe sway or incorrect time estimate.</li></ul></div>
+    <div class="card"><h3>Hand Clap</h3><ul><li>Count to 10.</li><li>Front and back of palm count as one number.</li><li>Observe improper count or movement.</li></ul></div>
+    <div class="card"><h3>Nose Touch</h3><ul><li>Eyes closed.</li><li>Right / left command.</li><li>Observe missed touch, wrong finger, wrong hand, or other error.</li></ul></div>
     <textarea class="resettable" placeholder="Alternative test notes"></textarea>
     <a class="docbtn" href="additional-tests.html" target="_blank">Open Full Additional Tests Form</a>
   </div>
@@ -628,170 +393,97 @@ textarea{
 
 </div>
 
-<div class="footer">ACSO FIELD GUIDE • Demo Version 6</div>
+<div class="footer">ACSO FIELD GUIDE • Demo Version 7</div>
 
 <script>
-function showPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-  updateProgress();
-}
-
-function toggleAccordion(id){
-  const el = document.getElementById(id);
-  if(el){
-    el.classList.toggle('open');
-    updateProgress();
-  }
-}
-
-function countChecked(selector){
-  return document.querySelectorAll(selector + ':checked').length;
-}
-
-function selectedLabels(selector){
-  return Array.from(document.querySelectorAll(selector + ':checked'))
-    .map(x => x.getAttribute('data-label'))
-    .filter(Boolean);
-}
-
-function listOrNone(items, noneText){
-  if(items.length === 0) return noneText;
-  return '<ul>' + items.map(i => '<li>' + i + '</li>').join('') + '</ul>';
-}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateProgress();}
+function toggleAccordion(id){const el=document.getElementById(id);if(el){el.classList.toggle('open');updateProgress();}}
+function countChecked(selector){return document.querySelectorAll(selector+':checked').length;}
+function selectedLabels(selector){return Array.from(document.querySelectorAll(selector+':checked')).map(x=>x.getAttribute('data-label')).filter(Boolean);}
+function listOrNone(items, noneText){return items.length?'<ul>'+items.map(i=>'<li>'+i+'</li>').join('')+'</ul>':noneText;}
 
 function updateProgress(){
   const checked=document.querySelectorAll('input.track:checked').length;
-  document.getElementById('progressText').innerText =
-    checked + ' checklist item' + (checked===1?'':'s') + ' selected.';
+  document.getElementById('progressText').innerText=checked+' checklist item'+(checked===1?'':'s')+' selected.';
 
-  const hgn=countChecked('.hgn-clue');
-  const wat=countChecked('.wat-clue');
-  const ols=countChecked('.ols-clue');
+  const hgn=countChecked('.hgn-clue'), wat=countChecked('.wat-clue'), ols=countChecked('.ols-clue');
 
   document.getElementById('hgnCount').innerText=hgn+' / 6 clues selected.';
   document.getElementById('watCount').innerText=wat+' / 8 clues selected.';
   document.getElementById('olsCount').innerText=ols+' / 4 clues selected.';
-
   document.getElementById('hgnMainCount').innerText='HGN clues selected: '+hgn+' / 6';
   document.getElementById('watMainCount').innerText='Walk and Turn clues selected: '+wat+' / 8';
   document.getElementById('olsMainCount').innerText='One Leg Stand clues selected: '+ols+' / 4';
 
-  document.getElementById('sfstSummary').innerHTML =
-    '<span class="badge">HGN: '+hgn+' / 6 clues</span>' +
-    '<span class="badge">Walk and Turn: '+wat+' / 8 clues</span>' +
+  document.getElementById('sfstSummary').innerHTML=
+    '<span class="badge">HGN: '+hgn+' / 6 clues</span>'+
+    '<span class="badge">Walk and Turn: '+wat+' / 8 clues</span>'+
     '<span class="badge">One Leg Stand: '+ols+' / 4 clues</span>';
 
-  if(hgn>0 && wat>0 && ols>0){
-    document.getElementById('batteryNote').innerText =
-      'Combined SFST battery reference: 91% accuracy for BAC above 0.08% when HGN, Walk and Turn, and One Leg Stand are used together.';
-  } else {
-    document.getElementById('batteryNote').innerText =
-      'Combined SFST battery reference appears when clues are selected from all three tests.';
-  }
+  document.getElementById('batteryNote').innerText=(hgn>0&&wat>0&&ols>0)
+    ? 'Combined SFST battery reference: 91% accuracy for BAC above 0.08% when HGN, Walk and Turn, and One Leg Stand are used together.'
+    : 'Combined SFST battery reference appears when clues are selected from all three tests.';
 
-  updateProbableCauseSummary(hgn, wat, ols);
+  updateProbableCauseSummary(hgn,wat,ols);
 }
 
-function updateProbableCauseSummary(hgn, wat, ols){
-  const driving = selectedLabels('.pc-driving');
-  const physical = selectedLabels('.pc-physical');
-  const alt = selectedLabels('.alt-test');
+function updateProbableCauseSummary(hgn,wat,ols){
+  const driving=selectedLabels('.pc-driving'), physical=selectedLabels('.pc-physical'), alt=selectedLabels('.alt-test');
+  const drivingOther=document.getElementById('drivingOther').value.trim();
+  const physicalOther=document.getElementById('physicalOther').value.trim();
+  if(drivingOther) driving.push('Other driving behavior: '+drivingOther);
+  if(physicalOther) physical.push('Other physical indicator: '+physicalOther);
 
-  const drivingOther = document.getElementById('drivingOther').value.trim();
-  const physicalOther = document.getElementById('physicalOther').value.trim();
+  document.getElementById('pcDrivingSummary').innerHTML=listOrNone(driving,'No driving indicators selected.');
+  document.getElementById('pcPhysicalSummary').innerHTML=listOrNone(physical,'No physical indicators selected.');
 
-  if(drivingOther) driving.push('Other driving behavior: ' + drivingOther);
-  if(physicalOther) physical.push('Other physical indicator: ' + physicalOther);
-
-  document.getElementById('pcDrivingSummary').innerHTML =
-    listOrNone(driving, 'No driving indicators selected.');
-
-  document.getElementById('pcPhysicalSummary').innerHTML =
-    listOrNone(physical, 'No physical indicators selected.');
-
-  const witness = document.getElementById('witnessStatements').value.trim();
-  const driver = document.getElementById('driverStatements').value.trim();
-  const origin = document.getElementById('originField').value.trim();
-  const destination = document.getElementById('destinationField').value.trim();
-
-  let statementItems = [];
-  if(witness) statementItems.push('Witnesses: ' + witness);
-  if(driver) statementItems.push('Driver statements: ' + driver);
-  if(origin) statementItems.push('Coming from: ' + origin);
-  if(destination) statementItems.push('Going to: ' + destination);
-
-  document.getElementById('pcStatementsSummary').innerHTML =
-    listOrNone(statementItems, 'No statement information entered.');
-
-  document.getElementById('pcSfstSummary').innerHTML =
-    '<ul>' +
-    '<li>HGN: ' + hgn + ' / 6 clues</li>' +
-    '<li>Walk and Turn: ' + wat + ' / 8 clues</li>' +
-    '<li>One Leg Stand: ' + ols + ' / 4 clues</li>' +
-    '</ul>';
-
-  document.getElementById('pcAltSummary').innerHTML =
-    listOrNone(alt, 'No alternative tests selected.');
+  const witness=document.getElementById('witnessStatements').value.trim();
+  const driver=document.getElementById('driverStatements').value.trim();
+  const origin=document.getElementById('originField').value.trim();
+  const destination=document.getElementById('destinationField').value.trim();
+  let s=[];
+  if(witness) s.push('Witnesses: '+witness);
+  if(driver) s.push('Driver statements: '+driver);
+  if(origin) s.push('Coming from: '+origin);
+  if(destination) s.push('Going to: '+destination);
+  document.getElementById('pcStatementsSummary').innerHTML=listOrNone(s,'No statement information entered.');
+  document.getElementById('pcSfstSummary').innerHTML='<ul><li>HGN: '+hgn+' / 6 clues</li><li>Walk and Turn: '+wat+' / 8 clues</li><li>One Leg Stand: '+ols+' / 4 clues</li></ul>';
+  document.getElementById('pcAltSummary').innerHTML=listOrNone(alt,'No alternative tests selected.');
 }
 
 function generateNarrative(){
-  const hgn=countChecked('.hgn-clue');
-  const wat=countChecked('.wat-clue');
-  const ols=countChecked('.ols-clue');
-
-  const driving = selectedLabels('.pc-driving');
-  const physical = selectedLabels('.pc-physical');
-  const alt = selectedLabels('.alt-test');
-
-  const drivingOther = document.getElementById('drivingOther').value.trim();
-  const physicalOther = document.getElementById('physicalOther').value.trim();
-
+  const hgn=countChecked('.hgn-clue'), wat=countChecked('.wat-clue'), ols=countChecked('.ols-clue');
+  const driving=selectedLabels('.pc-driving'), physical=selectedLabels('.pc-physical'), alt=selectedLabels('.alt-test');
+  const drivingOther=document.getElementById('drivingOther').value.trim();
+  const physicalOther=document.getElementById('physicalOther').value.trim();
   if(drivingOther) driving.push(drivingOther);
   if(physicalOther) physical.push(physicalOther);
 
-  const witness = document.getElementById('witnessStatements').value.trim();
-  const driver = document.getElementById('driverStatements').value.trim();
-  const origin = document.getElementById('originField').value.trim();
-  const destination = document.getElementById('destinationField').value.trim();
+  const witness=document.getElementById('witnessStatements').value.trim();
+  const driver=document.getElementById('driverStatements').value.trim();
+  const origin=document.getElementById('originField').value.trim();
+  const destination=document.getElementById('destinationField').value.trim();
 
-  let text = '';
-
-  if(driving.length){
-    text += 'The operator / vehicle was observed with the following driving indicators: ' + driving.join(', ') + '.\n\n';
+  let text='';
+  if(driving.length) text+='The operator / vehicle was observed with the following driving indicators: '+driving.join(', ')+'.\n\n';
+  if(physical.length) text+='Upon contact, the following personal contact indicators were observed: '+physical.join(', ')+'.\n\n';
+  if(driver||witness||origin||destination){
+    text+='Statements / travel information documented:\n';
+    if(witness) text+='- Witnesses: '+witness+'\n';
+    if(driver) text+='- Driver statements: '+driver+'\n';
+    if(origin) text+='- Coming from: '+origin+'\n';
+    if(destination) text+='- Going to: '+destination+'\n';
+    text+='\n';
   }
-
-  if(physical.length){
-    text += 'Upon contact, the following personal contact indicators were observed: ' + physical.join(', ') + '.\n\n';
-  }
-
-  if(driver || witness || origin || destination){
-    text += 'Statements / travel information documented:\n';
-    if(witness) text += '- Witnesses: ' + witness + '\n';
-    if(driver) text += '- Driver statements: ' + driver + '\n';
-    if(origin) text += '- Coming from: ' + origin + '\n';
-    if(destination) text += '- Going to: ' + destination + '\n';
-    text += '\n';
-  }
-
-  text += 'Standardized Field Sobriety Test summary:\n';
-  text += '- HGN: ' + hgn + ' of 6 clues selected.\n';
-  text += '- Walk and Turn: ' + wat + ' of 8 clues selected.\n';
-  text += '- One Leg Stand: ' + ols + ' of 4 clues selected.\n\n';
-
-  if(alt.length){
-    text += 'Alternative / supplemental tests reviewed or considered: ' + alt.join(', ') + '.\n\n';
-  }
-
-  const officer = document.getElementById('officerAssessment').value.trim();
-  if(officer){
-    text += 'Officer assessment: ' + officer + '\n\n';
-  }
-
-  text += 'This outline is intended only to organize observations. Final report language should be based on the officer’s independent observations, agency policy, current law, and prosecutor guidance.';
-
-  document.getElementById('narrativeOutput').value = text;
+  text+='Standardized Field Sobriety Test summary:\n';
+  text+='- HGN: '+hgn+' of 6 clues selected.\n';
+  text+='- Walk and Turn: '+wat+' of 8 clues selected.\n';
+  text+='- One Leg Stand: '+ols+' of 4 clues selected.\n\n';
+  if(alt.length) text+='Alternative / supplemental tests reviewed or considered: '+alt.join(', ')+'.\n\n';
+  const officer=document.getElementById('officerAssessment').value.trim();
+  if(officer) text+='Officer assessment: '+officer+'\n\n';
+  text+='This outline is intended only to organize observations. Final report language should be based on the officer’s independent observations, agency policy, current law, and prosecutor guidance.';
+  document.getElementById('narrativeOutput').value=text;
 }
 
 function resetChecklist(){
@@ -799,15 +491,8 @@ function resetChecklist(){
   document.querySelectorAll('.resettable').forEach(x=>x.value='');
   updateProgress();
 }
-
-document.addEventListener('change', function(e){
-  if(e.target.classList.contains('track')) updateProgress();
-});
-
-document.addEventListener('input', function(e){
-  if(e.target.classList.contains('resettable')) updateProgress();
-});
-
+document.addEventListener('change',e=>{if(e.target.classList.contains('track')) updateProgress();});
+document.addEventListener('input',e=>{if(e.target.classList.contains('resettable')) updateProgress();});
 updateProgress();
 </script>
 
