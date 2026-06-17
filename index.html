@@ -190,6 +190,15 @@ textarea{
   color:#eee;
 }
 
+.summary-list{
+  background:#0f0f0f;
+  border:1px solid #333;
+  border-radius:10px;
+  padding:12px;
+  color:#ddd;
+  line-height:1.7;
+}
+
 .footer{
   color:#888;
   text-align:center;
@@ -211,7 +220,7 @@ textarea{
   <div class="grid">
     <div class="card">
       <h3>Ohio OVI Investigation</h3>
-      <p>Reference guide for investigation observations, SFST review, alternative tests, arrest processing, charging considerations, and post-arrest follow-up.</p>
+      <p>Reference guide for investigation observations, SFST review, alternative tests, probable cause assessment, arrest processing, charging considerations, and post-arrest follow-up.</p>
       <button onclick="showPage('ovi')">Open Module</button>
     </div>
 
@@ -246,11 +255,11 @@ textarea{
       </div>
       <div id="vehicle" class="accordion-content">
         <p class="small">Not exhaustive.</p>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Speed</span></label>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Marked Lanes</span></label>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Traffic Control Devices</span></label>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Distance Judgment / Following Too Closely</span></label>
-        <label>Other:<input type="text" class="resettable" placeholder="Type other driving behavior"></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-driving" data-label="Speed"><span>Speed</span></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-driving" data-label="Marked Lanes"><span>Marked Lanes</span></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-driving" data-label="Traffic Control Devices"><span>Traffic Control Devices</span></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-driving" data-label="Distance Judgment / Following Too Closely"><span>Distance Judgment / Following Too Closely</span></label>
+        <label>Other:<input type="text" id="drivingOther" class="resettable" placeholder="Type other driving behavior"></label>
       </div>
     </div>
 
@@ -260,15 +269,15 @@ textarea{
       </div>
       <div id="physical" class="accordion-content">
         <p class="small">Not exhaustive.</p>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Red face</span></label>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Bloodshot, watery, and / or glassy eyes</span></label>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Pupils not appropriate for light conditions</span></label>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Slurred speech</span></label>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Unable to multitask / fumbling for items</span></label>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Issues with balancing</span></label>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Odor of alcohol / marijuana on person</span></label>
-        <label class="checkrow"><input type="checkbox" class="track"><span>Evidence of alcohol / drug consumption in vehicle</span></label>
-        <label>Other:<input type="text" class="resettable" placeholder="Type other physical indicator"></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-physical" data-label="Red face"><span>Red face</span></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-physical" data-label="Bloodshot, watery, and / or glassy eyes"><span>Bloodshot, watery, and / or glassy eyes</span></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-physical" data-label="Pupils not appropriate for light conditions"><span>Pupils not appropriate for light conditions</span></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-physical" data-label="Slurred speech"><span>Slurred speech</span></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-physical" data-label="Unable to multitask / fumbling for items"><span>Unable to multitask / fumbling for items</span></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-physical" data-label="Issues with balancing"><span>Issues with balancing</span></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-physical" data-label="Odor of alcohol / marijuana on person"><span>Odor of alcohol / marijuana on person</span></label>
+        <label class="checkrow"><input type="checkbox" class="track pc-physical" data-label="Evidence of alcohol / drug consumption in vehicle"><span>Evidence of alcohol / drug consumption in vehicle</span></label>
+        <label>Other:<input type="text" id="physicalOther" class="resettable" placeholder="Type other physical indicator"></label>
       </div>
     </div>
 
@@ -277,10 +286,10 @@ textarea{
         <h3>Statements</h3><span>▼</span>
       </div>
       <div id="statements" class="accordion-content">
-        <label>Witnesses?<textarea class="resettable" placeholder="Witness observations / statements"></textarea></label>
-        <label>What does the driver tell you?<textarea class="resettable" placeholder="Driver statements"></textarea></label>
-        <label>Where are they coming from?<input type="text" class="resettable"></label>
-        <label>Where are they going to?<input type="text" class="resettable"></label>
+        <label>Witnesses?<textarea id="witnessStatements" class="resettable" placeholder="Witness observations / statements"></textarea></label>
+        <label>What does the driver tell you?<textarea id="driverStatements" class="resettable" placeholder="Driver statements"></textarea></label>
+        <label>Where are they coming from?<input id="originField" type="text" class="resettable"></label>
+        <label>Where are they going to?<input id="destinationField" type="text" class="resettable"></label>
       </div>
     </div>
 
@@ -333,12 +342,14 @@ textarea{
             <div class="card">
               <h3>Lack of Convergence</h3>
               <p class="small">Used to observe whether both eyes are able to converge when a stimulus is moved toward the bridge of the nose.</p>
+              <label class="checkrow"><input type="checkbox" class="track alt-test" data-label="Lack of Convergence reviewed / considered"><span>Lack of Convergence reviewed / considered</span></label>
               <button class="btn-blue" onclick="showPage('loc')">Open Lack of Convergence Reference</button>
             </div>
 
             <div class="card">
               <h3>Alternative Test Battery</h3>
               <p class="small">Alphabet, Finger Count, Rhomberg, Hand Clap, Nose Touch, and PBT / Final Indicators.</p>
+              <label class="checkrow"><input type="checkbox" class="track alt-test" data-label="Alternative Test Battery reviewed / considered"><span>Alternative Test Battery reviewed / considered</span></label>
               <button class="btn-blue" onclick="showPage('altbattery')">Open Alternative Test Battery Reference</button>
             </div>
 
@@ -350,7 +361,65 @@ textarea{
     </div>
   </div>
 
-  <div class="card locked"><h3>Probable Cause Assessment</h3><p>Coming Soon</p></div>
+  <div class="card">
+    <div class="accordion-title" onclick="toggleAccordion('probableCause')">
+      <h3>Probable Cause Assessment Lite</h3><span>▼</span>
+    </div>
+
+    <div id="probableCause" class="accordion-content">
+      <p class="small">
+        This section helps organize observations. It does not determine probable cause.
+        The officer must independently evaluate the totality of circumstances.
+      </p>
+
+      <div class="card">
+        <h3>Driving Indicators Documented</h3>
+        <div id="pcDrivingSummary" class="summary-list">No driving indicators selected.</div>
+      </div>
+
+      <div class="card">
+        <h3>Personal Contact Indicators Documented</h3>
+        <div id="pcPhysicalSummary" class="summary-list">No physical indicators selected.</div>
+      </div>
+
+      <div class="card">
+        <h3>Statements Summary</h3>
+        <div id="pcStatementsSummary" class="summary-list">No statement information entered.</div>
+      </div>
+
+      <div class="card">
+        <h3>SFST Summary</h3>
+        <div id="pcSfstSummary" class="summary-list">No SFST clues selected.</div>
+      </div>
+
+      <div class="card">
+        <h3>Alternative Test Summary</h3>
+        <div id="pcAltSummary" class="summary-list">No alternative tests selected.</div>
+      </div>
+
+      <div class="card">
+        <h3>Enforcement Decision / Next Step</h3>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Warning</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Citation</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>OVI Arrest</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Drug Investigation</span></label>
+        <label class="checkrow"><input type="checkbox" class="track"><span>Request DRE</span></label>
+        <label>Other:<input type="text" class="resettable" placeholder="Other enforcement decision / next step"></label>
+      </div>
+
+      <div class="card">
+        <h3>Officer Assessment</h3>
+        <textarea id="officerAssessment" class="resettable" placeholder="Based upon the totality of circumstances, describe the observations supporting your enforcement decision."></textarea>
+        <button class="btn-blue" onclick="generateNarrative()">Generate Narrative Outline</button>
+      </div>
+
+      <div class="card">
+        <h3>Narrative Outline</h3>
+        <textarea id="narrativeOutput" class="resettable" placeholder="Generated narrative outline will appear here."></textarea>
+      </div>
+    </div>
+  </div>
+
   <div class="card locked"><h3>Arrest & Processing</h3><p>Coming Soon</p></div>
   <div class="card locked"><h3>Chemical Testing</h3><p>Coming Soon</p></div>
   <div class="card locked"><h3>Charging Considerations</h3><p>Coming Soon</p></div>
@@ -559,7 +628,7 @@ textarea{
 
 </div>
 
-<div class="footer">ACSO FIELD GUIDE • Demo Version 5</div>
+<div class="footer">ACSO FIELD GUIDE • Demo Version 6</div>
 
 <script>
 function showPage(id){
@@ -573,11 +642,23 @@ function toggleAccordion(id){
   const el = document.getElementById(id);
   if(el){
     el.classList.toggle('open');
+    updateProgress();
   }
 }
 
 function countChecked(selector){
   return document.querySelectorAll(selector + ':checked').length;
+}
+
+function selectedLabels(selector){
+  return Array.from(document.querySelectorAll(selector + ':checked'))
+    .map(x => x.getAttribute('data-label'))
+    .filter(Boolean);
+}
+
+function listOrNone(items, noneText){
+  if(items.length === 0) return noneText;
+  return '<ul>' + items.map(i => '<li>' + i + '</li>').join('') + '</ul>';
 }
 
 function updateProgress(){
@@ -609,6 +690,108 @@ function updateProgress(){
     document.getElementById('batteryNote').innerText =
       'Combined SFST battery reference appears when clues are selected from all three tests.';
   }
+
+  updateProbableCauseSummary(hgn, wat, ols);
+}
+
+function updateProbableCauseSummary(hgn, wat, ols){
+  const driving = selectedLabels('.pc-driving');
+  const physical = selectedLabels('.pc-physical');
+  const alt = selectedLabels('.alt-test');
+
+  const drivingOther = document.getElementById('drivingOther').value.trim();
+  const physicalOther = document.getElementById('physicalOther').value.trim();
+
+  if(drivingOther) driving.push('Other driving behavior: ' + drivingOther);
+  if(physicalOther) physical.push('Other physical indicator: ' + physicalOther);
+
+  document.getElementById('pcDrivingSummary').innerHTML =
+    listOrNone(driving, 'No driving indicators selected.');
+
+  document.getElementById('pcPhysicalSummary').innerHTML =
+    listOrNone(physical, 'No physical indicators selected.');
+
+  const witness = document.getElementById('witnessStatements').value.trim();
+  const driver = document.getElementById('driverStatements').value.trim();
+  const origin = document.getElementById('originField').value.trim();
+  const destination = document.getElementById('destinationField').value.trim();
+
+  let statementItems = [];
+  if(witness) statementItems.push('Witnesses: ' + witness);
+  if(driver) statementItems.push('Driver statements: ' + driver);
+  if(origin) statementItems.push('Coming from: ' + origin);
+  if(destination) statementItems.push('Going to: ' + destination);
+
+  document.getElementById('pcStatementsSummary').innerHTML =
+    listOrNone(statementItems, 'No statement information entered.');
+
+  document.getElementById('pcSfstSummary').innerHTML =
+    '<ul>' +
+    '<li>HGN: ' + hgn + ' / 6 clues</li>' +
+    '<li>Walk and Turn: ' + wat + ' / 8 clues</li>' +
+    '<li>One Leg Stand: ' + ols + ' / 4 clues</li>' +
+    '</ul>';
+
+  document.getElementById('pcAltSummary').innerHTML =
+    listOrNone(alt, 'No alternative tests selected.');
+}
+
+function generateNarrative(){
+  const hgn=countChecked('.hgn-clue');
+  const wat=countChecked('.wat-clue');
+  const ols=countChecked('.ols-clue');
+
+  const driving = selectedLabels('.pc-driving');
+  const physical = selectedLabels('.pc-physical');
+  const alt = selectedLabels('.alt-test');
+
+  const drivingOther = document.getElementById('drivingOther').value.trim();
+  const physicalOther = document.getElementById('physicalOther').value.trim();
+
+  if(drivingOther) driving.push(drivingOther);
+  if(physicalOther) physical.push(physicalOther);
+
+  const witness = document.getElementById('witnessStatements').value.trim();
+  const driver = document.getElementById('driverStatements').value.trim();
+  const origin = document.getElementById('originField').value.trim();
+  const destination = document.getElementById('destinationField').value.trim();
+
+  let text = '';
+
+  if(driving.length){
+    text += 'The operator / vehicle was observed with the following driving indicators: ' + driving.join(', ') + '.\n\n';
+  }
+
+  if(physical.length){
+    text += 'Upon contact, the following personal contact indicators were observed: ' + physical.join(', ') + '.\n\n';
+  }
+
+  if(driver || witness || origin || destination){
+    text += 'Statements / travel information documented:\n';
+    if(witness) text += '- Witnesses: ' + witness + '\n';
+    if(driver) text += '- Driver statements: ' + driver + '\n';
+    if(origin) text += '- Coming from: ' + origin + '\n';
+    if(destination) text += '- Going to: ' + destination + '\n';
+    text += '\n';
+  }
+
+  text += 'Standardized Field Sobriety Test summary:\n';
+  text += '- HGN: ' + hgn + ' of 6 clues selected.\n';
+  text += '- Walk and Turn: ' + wat + ' of 8 clues selected.\n';
+  text += '- One Leg Stand: ' + ols + ' of 4 clues selected.\n\n';
+
+  if(alt.length){
+    text += 'Alternative / supplemental tests reviewed or considered: ' + alt.join(', ') + '.\n\n';
+  }
+
+  const officer = document.getElementById('officerAssessment').value.trim();
+  if(officer){
+    text += 'Officer assessment: ' + officer + '\n\n';
+  }
+
+  text += 'This outline is intended only to organize observations. Final report language should be based on the officer’s independent observations, agency policy, current law, and prosecutor guidance.';
+
+  document.getElementById('narrativeOutput').value = text;
 }
 
 function resetChecklist(){
@@ -619,6 +802,10 @@ function resetChecklist(){
 
 document.addEventListener('change', function(e){
   if(e.target.classList.contains('track')) updateProgress();
+});
+
+document.addEventListener('input', function(e){
+  if(e.target.classList.contains('resettable')) updateProgress();
 });
 
 updateProgress();
